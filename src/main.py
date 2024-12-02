@@ -12,6 +12,7 @@ from .core.interfaces.validator import Validator
 
 from .extractors.azure_docintel_extractor import AzureDocIntelExtractor
 from .preprocessors.basic_preprocessor import BasicPreprocessor
+from .preprocessors.basic_preprocessor_v2 import BasicPreprocessorV2
 from .llm_extractors.azure_openai_extractor import AzureOpenAIExtractor
 from .validators.business_rules_validator import BusinessRulesValidator
 from .pipeline.extraction_pipeline import ExtractionPipeline
@@ -45,7 +46,7 @@ def main():
         
         # Initialize pipeline components
         text_extractor = AzureDocIntelExtractor.from_config(config['azure_docint'])
-        preprocessor = BasicPreprocessor()
+        preprocessor = BasicPreprocessorV2()
         data_extractor = AzureOpenAIExtractor.from_config(config['azure_openai'])
         validator = BusinessRulesValidator()
         

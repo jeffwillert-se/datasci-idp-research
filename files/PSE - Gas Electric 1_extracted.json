@@ -71,7 +71,7 @@
       "notes": null
     },
     {
-      "name": "Electricity Tier 1",
+      "name": "Electricity - Tier 1 (First 20000 kWh Used)",
       "amount": 2027.44,
       "category": "Usage",
       "commodity": "Electric Power",
@@ -81,7 +81,7 @@
       "notes": null
     },
     {
-      "name": "Electricity Tier 2",
+      "name": "Electricity - Tier 2 (Above 20000 kWh Used)",
       "amount": 767.14,
       "category": "Usage",
       "commodity": "Electric Power",
@@ -111,7 +111,7 @@
       "notes": null
     },
     {
-      "name": "Electric Demand Charge",
+      "name": "Electric Demand Charge (First 50 KW Used)",
       "amount": 131.5,
       "category": "Demand",
       "commodity": "Electric Power",
@@ -121,7 +121,7 @@
       "notes": null
     },
     {
-      "name": "Electric Demand Charge",
+      "name": "Electric Demand Charge (Above 50 KW Used)",
       "amount": 172.59,
       "category": "Demand",
       "commodity": "Electric Power",
@@ -151,7 +151,7 @@
       "notes": null
     },
     {
-      "name": "Natural Gas Delivery Charge",
+      "name": "Delivery Charge",
       "amount": 1110.77,
       "category": "Usage",
       "commodity": "Natural Gas",

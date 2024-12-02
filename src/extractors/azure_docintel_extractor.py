@@ -6,6 +6,7 @@ from azure.ai.documentintelligence.models import AnalyzeResult
 from ..core.interfaces.text_extractor import TextExtractor
 from ..core.models.extraction_result import ExtractionResult
 from ..preprocessors.basic_preprocessor import BasicPreprocessor
+from ..preprocessors.basic_preprocessor_v2 import BasicPreprocessorV2
 
 class AzureDocIntelExtractor(TextExtractor):
     """Azure Document Intelligence implementation of the TextExtractor interface."""
@@ -21,7 +22,7 @@ class AzureDocIntelExtractor(TextExtractor):
             endpoint=endpoint, 
             credential=AzureKeyCredential(key)
         )
-        self.preprocessor = BasicPreprocessor()
+        self.preprocessor = BasicPreprocessorV2()
 
     def extract(self, file_path: str) -> ExtractionResult:
         """Extract text and layout information from a document.
