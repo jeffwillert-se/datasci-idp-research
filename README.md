@@ -8,15 +8,17 @@ This system provides an end-to-end pipeline for processing energy invoices and e
 
 ## Features
 
+Note - this is not implemented as a web-service currently!
+
 - **Modular Architecture**: Mix and match different components for each stage of the extraction process
 - **Multiple OCR/Text Extraction Options**:
   - Azure Document Intelligence
-  - LlamaParse
+  - LlamaParse (NOT IMPLEMENTED)
   - (Additional extractors can be easily integrated)
 - **Configurable Text Preprocessing**
 - **Support for Multiple LLM Providers**:
   - OpenAI
-  - Anthropic
+  - Anthropic (NOT IMPLEMENTED)
   - (Extensible for other providers)
 - **Comprehensive Validation**:
   - JSON schema validation
@@ -33,29 +35,9 @@ pip install -r requirements.txt
 
 ## Quick Start
 
-```python
-from invoice_extractor.pipeline import ExtractionPipeline
-from invoice_extractor.extractors import AzureExtractor
-from invoice_extractor.preprocessors import BasicPreprocessor
-from invoice_extractor.llm_extractors import OpenAIExtractor
-from invoice_extractor.validators import BusinessRulesValidator
-
-# Initialize components
-extractor = AzureExtractor()
-preprocessor = BasicPreprocessor()
-llm_extractor = OpenAIExtractor()
-validator = BusinessRulesValidator()
-
-# Create pipeline
-pipeline = ExtractionPipeline(
-    text_extractor=extractor,
-    preprocessor=preprocessor,
-    data_extractor=llm_extractor,
-    validator=validator
-)
-
-# Process an invoice
-result = pipeline.process("path/to/invoice.pdf")
+Review the file /src/main.py for an example of running this capability.  
+```bash
+python -m src.main
 ```
 
 ## Architecture
@@ -68,6 +50,7 @@ The system is built around four main components:
 4. **Validation**: Ensures extracted data meets format and business rule requirements
 
 ## Project Structure
+```
 datasci-idp-research/
 ├── src/
 │ ├── core/
@@ -100,6 +83,7 @@ datasci-idp-research/
 │ └── main.py # Main entry point
 ├── tests/ # Test suite
 └── requirements.txt
+```
 
 ### Key Directory Descriptions
 
