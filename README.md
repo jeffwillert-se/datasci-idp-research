@@ -68,65 +68,37 @@ The system is built around four main components:
 4. **Validation**: Ensures extracted data meets format and business rule requirements
 
 ## Project Structure
-invoice_extractor/
-│
+datasci-idp-research/
 ├── src/
-│   ├── init.py
-│   │
-│   ├── core/                      # Core interfaces and models
-│   │   ├── init.py
-│   │   ├── interfaces/            # Abstract base classes
-│   │   │   ├── init.py
-│   │   │   ├── text_extractor.py  # Text extraction interface
-│   │   │   ├── text_preprocessor.py
-│   │   │   ├── data_extractor.py
-│   │   │   └── validator.py
-│   │   │
-│   │   └── models/               # Data models
-│   │       ├── init.py
-│   │       ├── invoice.py        # Invoice data structure
-│   │       └── extraction_result.py
-│   │
-│   ├── extractors/               # Text extraction implementations
-│   │   ├── init.py
-│   │   ├── azure_extractor.py    # Azure Document Intelligence
-│   │   └── llama_parse_extractor.py
-│   │
-│   ├── preprocessors/            # Text preprocessing implementations
-│   │   ├── init.py
-│   │   ├── basic_preprocessor.py
-│   │   └── advanced_preprocessor.py
-│   │
-│   ├── llm_extractors/          # LLM-based extraction implementations
-│   │   ├── init.py
-│   │   ├── openai_extractor.py
-│   │   └── anthropic_extractor.py
-│   │
-│   ├── validators/              # Validation implementations
-│   │   ├── init.py
-│   │   ├── json_validator.py
-│   │   └── business_rules_validator.py
-│   │
-│   └── pipeline/               # Pipeline orchestration
-│       ├── init.py
-│       └── extraction_pipeline.py
-│
-├── tests/                      # Test suite
-│   ├── init.py
-│   ├── test_extractors/
-│   ├── test_preprocessors/
-│   ├── test_llm_extractors/
-│   ├── test_validators/
-│   └── test_pipeline/
-│
-├── config/                     # Configuration files
-│   ├── init.py
-│   └── settings.py
-│
-├── examples/                   # Usage examples
-│   ├── sample_invoices/
-│   └── usage_examples.py
-│
+│ ├── core/
+│ │ ├── interfaces/ # Abstract base classes
+│ │ │ ├── text_extractor.py
+│ │ │ ├── text_preprocessor.py
+│ │ │ ├── data_extractor.py
+│ │ │ └── validator.py
+│ │ ├── models/ # Data models
+│ │ │ ├── invoice.py
+│ │ │ └── extraction_result.py
+│ │ └── prompts/ # LLM prompts
+│ │ └── azure_openai/
+│ │ ├── account_info.yaml
+│ │ ├── charges.yaml
+│ │ ├── determinants.yaml
+│ │ └── normalize_charges.yaml
+│ ├── extractors/ # Text extraction implementations
+│ │ └── azure_docintel_extractor.py
+│ ├── preprocessors/ # Text preprocessing
+│ │ ├── basic_preprocessor.py
+│ │ └── advanced_preprocessor.py
+│ ├── llm_extractors/ # LLM-based extraction
+│ │ └── azure_openai_extractor.py
+│ ├── validators/ # Validation implementations
+│ │ └── business_rules_validator.py
+│ ├── config/ # Configuration
+│ │ ├── default_config.yaml
+│ │ └── settings.py
+│ └── main.py # Main entry point
+├── tests/ # Test suite
 └── requirements.txt
 
 ### Key Directory Descriptions
