@@ -1,0 +1,52 @@
+allowed_units:
+  # Energy units
+  - kWh
+  - MWh
+  - Therms
+  - CCF
+  - MCF
+  - MMBTU
+  - Dth
+  # Demand units
+  - kW
+  - MW
+  - kVA
+  - MVA
+  # Power factor units
+  - kVAR
+  - MVAR
+  - PF
+  # Generic units
+  - N/A
+  - ACCOUNT
+  - PCT
+  - \%
+
+determinants:
+  value_ranges:
+    min: 0
+    max: 1000000
+  date_rules:
+    max_period_days: 35
+    future_tolerance_days: 7
+
+charges:
+  categories:
+    - Usage
+    - Demand
+    - Fixed
+    - Tax
+  rate_ranges:
+    electricity:
+      min: 0.01
+      max: 1.00
+    demand:
+      min: 1.00
+      max: 50.00
+    gas:
+      min: 0.10
+      max: 5.00
+
+totals:
+  tolerance: 0.01
+  require_subtotal_match: true 

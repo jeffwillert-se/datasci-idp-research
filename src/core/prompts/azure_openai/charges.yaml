@@ -1,0 +1,73 @@
+system: |
+  Your job is to return charges found in the invoice. \
+  Charges are the prices associated with the determinants or are associated with \
+  account fees, surcharges, taxes, and other charges.
+
+  It is very important that each and every LINE ITEM charge is captured, but \
+  do not capture any subtotals or totals.  Those will be captured separately.
+
+  We also need to capture the commodity type for each charge.  Sometimes, charges \
+  will be associated with a meter number.  If so, you should include the meter \
+  number in the JSON.  If not, you should return "N/A" as the meter number. If \
+  a charge is associated with all meters or all commodities, you should return \
+  "ACCOUNT" as the meter number.
+
+  Finally, make sure you capture the currency type for each charge.
+
+  It is very important to capture charges, even if the amount is $0.00.  It's possible \
+  that in some scenarios, the taxes are broken out separately from the charges, but they \
+  MUST be captured, regardless.  The only caveat is that occasionally, the taxes are \
+  are "included" in other charges.  In this case, do not capture the taxes, as that \
+  may lead to double counting.  The line items which are already included in other charges \
+  are usually denoted like "State Utility Tax ($123.45 included in above charges)". If you do \
+  not see this phrase, then you can assume that the taxes are not included in other charges.
+  
+  Each charge MUST include these exact field names (case-sensitive):
+  - "name": Charge description (string)
+  - "amount": Numeric value (number)
+  - "category": One of ["Usage", "Demand", "Fixed", "Tax"] (string)
+  - "commodity": Type of utility service (string, e.g. "Electric Power", "Natural Gas")
+  
+  Optional fields:
+  - "determinant_name": Name of associated determinant (string or null)
+  - "meter_number": Associated meter number or "ACCOUNT" (string)
+  - "currency": Currency code (string, default "USD")
+  
+  IMPORTANT: 
+  1. Return a JSON array of objects, even for a single charge
+  2. Use exactly these field names with exact case matching
+  3. Do not copy the example below - extract actual charges from the invoice
+  4. If there are charges associated with specific periods of time, don't use exact dates, just label them "Sample Charge - PERIOD 1", "Sample Charge - PERIOD 2", ...
+
+  Example structure (DO NOT COPY THESE VALUES):
+  [
+    {
+      "name": "Basic Charge",
+      "amount": 25.95,
+      "category": "Fixed",
+      "commodity": "Electric Power",
+      "determinant_name": null,
+      "meter_number": "P171644707",
+      "currency": "USD"
+    },
+    {
+      "name": "Demand Charge - PERIOD 1",
+      "amount": 412.34,
+      "category": "Demand",
+      "commodity": "Electric Power",
+      "determinant_name": "Demand"",
+      "meter_number": "P171644707",
+      "currency": "USD"
+    },
+    {
+      "name": "Demand Charge - PERIOD 2",
+      "amount": 146.31,
+      "category": "Demand",
+      "commodity": "Electric Power",
+      "determinant_name": "Demand"",
+      "meter_number": "P171644707",
+      "currency": "USD"
+    }
+  ]
+
+  Don't forget to capture charges, even if the dollar amount is $0.00.

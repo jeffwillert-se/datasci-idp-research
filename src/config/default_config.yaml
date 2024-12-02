@@ -1,0 +1,66 @@
+# Azure Document Intelligence Settings
+azure_docint:
+  endpoint: "https://di-datasci-nonprod.cognitiveservices.azure.com/"
+  key: "10909d9ec08541b4b0e6a7d8f32557e7"
+  api_version: "2024-02-15-preview"
+
+# Azure OpenAI Settings
+azure_openai:
+  endpoint: "https://gpt4t-openaidev.openai.azure.com/"
+  api_key: "e8abeac028b645098eab347c0e2c4a66"
+  api_version: "2024-08-01-preview"
+  deployment: "gpt-4o"
+  temperature: 0.0
+  max_tokens: 2000
+  top_p: 1.0
+  frequency_penalty: 0.0
+  presence_penalty: 0.0
+
+# OpenAI Settings
+openai:
+  api_key: ""
+  model: "gpt-4"
+  temperature: 0.0
+  max_tokens: 2000
+
+# Anthropic Settings
+anthropic:
+  api_key: ""
+  model: "claude-3-sonnet"
+  temperature: 0.0
+  max_tokens: 2000
+
+# Validator Settings
+validators:
+  business_rules:
+    rules_file: "core/rules/business_rules.yaml"
+  json_validator:
+    schema_dir: "core/schemas"
+
+# Preprocessing Settings
+preprocessors:
+  basic:
+    remove_headers: true
+    remove_footers: true
+    table_tokens: true
+  advanced:
+    layout_analysis: true
+    table_extraction: true
+    ocr_correction: true
+
+# Logging Settings
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/invoice_extractor.log"
+
+# Application Settings
+app:
+  max_retries: 3
+  timeout: 30
+  batch_size: 10
+  supported_formats:
+    - pdf
+    - jpeg
+    - png
+    - tiff 

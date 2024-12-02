@@ -1,0 +1,223 @@
+{
+  "account_info": {
+    "account_number": "220019124928",
+    "invoice_number": null,
+    "invoice_date": "2024-10-15",
+    "billing_period_start": "2024-08-23",
+    "billing_period_end": "2024-09-23",
+    "vendor_name": "Puget Sound Energy",
+    "customer_name": "SEASTAR HOTEL INVESTMENT LLC",
+    "service_address": "19333 INTERNATIONAL BLVD, Seatac",
+    "meter_numbers": [
+      "P144388079",
+      "1107289"
+    ],
+    "due_date": null,
+    "billing_address": null,
+    "source_file": "./files/PSE - Gas Electric 1.pdf",
+    "extraction_date": "2024-12-02"
+  },
+  "determinants": [
+    {
+      "name": "Total Consumption",
+      "value": 29100.0,
+      "unit": "kWh",
+      "meter": "P144388079",
+      "commodity": "electric power",
+      "reading_type": null,
+      "start_date": null,
+      "end_date": null
+    },
+    {
+      "name": "Demand",
+      "value": 68.4,
+      "unit": "kW",
+      "meter": "P144388079",
+      "commodity": "electric power",
+      "reading_type": null,
+      "start_date": null,
+      "end_date": null
+    },
+    {
+      "name": "Reactive Power",
+      "value": 4200.0,
+      "unit": "kVAR",
+      "meter": "P144388079",
+      "commodity": "electric power",
+      "reading_type": null,
+      "start_date": null,
+      "end_date": null
+    },
+    {
+      "name": "Total Volume",
+      "value": 1093.238,
+      "unit": "Therms",
+      "meter": "1107289",
+      "commodity": "natural gas",
+      "reading_type": null,
+      "start_date": null,
+      "end_date": null
+    }
+  ],
+  "charges": [
+    {
+      "name": "Basic Charge",
+      "amount": 53.95,
+      "category": "Fixed",
+      "commodity": "Electric Power",
+      "currency": "USD",
+      "unit_rate": null,
+      "meter_number": "P144388079",
+      "notes": null
+    },
+    {
+      "name": "Electricity Tier 1",
+      "amount": 2027.44,
+      "category": "Usage",
+      "commodity": "Electric Power",
+      "currency": "USD",
+      "unit_rate": null,
+      "meter_number": "P144388079",
+      "notes": null
+    },
+    {
+      "name": "Electricity Tier 2",
+      "amount": 767.14,
+      "category": "Usage",
+      "commodity": "Electric Power",
+      "currency": "USD",
+      "unit_rate": null,
+      "meter_number": "P144388079",
+      "notes": null
+    },
+    {
+      "name": "Electric Cons. Program Charge",
+      "amount": 156.12,
+      "category": "Usage",
+      "commodity": "Electric Power",
+      "currency": "USD",
+      "unit_rate": null,
+      "meter_number": "P144388079",
+      "notes": null
+    },
+    {
+      "name": "Power Cost Adjustment",
+      "amount": 314.54,
+      "category": "Usage",
+      "commodity": "Electric Power",
+      "currency": "USD",
+      "unit_rate": null,
+      "meter_number": "P144388079",
+      "notes": null
+    },
+    {
+      "name": "Electric Demand Charge",
+      "amount": 131.5,
+      "category": "Demand",
+      "commodity": "Electric Power",
+      "currency": "USD",
+      "unit_rate": null,
+      "meter_number": "P144388079",
+      "notes": null
+    },
+    {
+      "name": "Electric Demand Charge",
+      "amount": 172.59,
+      "category": "Demand",
+      "commodity": "Electric Power",
+      "currency": "USD",
+      "unit_rate": null,
+      "meter_number": "P144388079",
+      "notes": null
+    },
+    {
+      "name": "Renewable Energy Credit",
+      "amount": 0.2,
+      "category": "Usage",
+      "commodity": "Electric Power",
+      "currency": "USD",
+      "unit_rate": null,
+      "meter_number": "P144388079",
+      "notes": null
+    },
+    {
+      "name": "Basic Charge",
+      "amount": 38.89,
+      "category": "Fixed",
+      "commodity": "Natural Gas",
+      "currency": "USD",
+      "unit_rate": null,
+      "meter_number": "1107289",
+      "notes": null
+    },
+    {
+      "name": "Natural Gas Delivery Charge",
+      "amount": 1110.77,
+      "category": "Usage",
+      "commodity": "Natural Gas",
+      "currency": "USD",
+      "unit_rate": null,
+      "meter_number": "1107289",
+      "notes": null
+    },
+    {
+      "name": "Gas Cost",
+      "amount": 381.96,
+      "category": "Usage",
+      "commodity": "Natural Gas",
+      "currency": "USD",
+      "unit_rate": null,
+      "meter_number": "1107289",
+      "notes": null
+    },
+    {
+      "name": "Gas Cons. Program Charge",
+      "amount": 39.97,
+      "category": "Usage",
+      "commodity": "Natural Gas",
+      "currency": "USD",
+      "unit_rate": null,
+      "meter_number": "1107289",
+      "notes": null
+    },
+    {
+      "name": "State Carbon Reduction Credit",
+      "amount": -13.28,
+      "category": "Usage",
+      "commodity": "Natural Gas",
+      "currency": "USD",
+      "unit_rate": null,
+      "meter_number": "1107289",
+      "notes": null
+    },
+    {
+      "name": "State Carbon Reduction Credit",
+      "amount": -41.78,
+      "category": "Usage",
+      "commodity": "Natural Gas",
+      "currency": "USD",
+      "unit_rate": null,
+      "meter_number": "1107289",
+      "notes": null
+    }
+  ],
+  "summary": {
+    "subtotals": {
+      "Electric Power": 3623.48,
+      "Natural Gas": 1516.53
+    },
+    "total_amount": 5140.01,
+    "previous_balance": null,
+    "payments": null,
+    "late_fees": null,
+    "currency": "USD",
+    "commodities": [
+      "Electric Power",
+      "Natural Gas"
+    ]
+  },
+  "metadata": {
+    "confidence_score": null,
+    "validation_errors": []
+  }
+}
